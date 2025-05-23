@@ -19,7 +19,7 @@ export function conditions(options: t.Options): Set<t.Condition> {
 	return out;
 }
 
-const escape = RegExp.escape ?? ((str: string) => str.replaceAll('.', '\\.'));
+const escape = RegExp.escape ?? ((str: string) => str.replace(/\./g, '\\.'));
 
 export function walk(name: string, mapping: Mapping, input: string, options?: t.Options): string[] {
 	let entry = toEntry(name, input);
